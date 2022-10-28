@@ -1,0 +1,4 @@
+[1;1;32m[info:] [main.go:19] 2021-06-02 21:28:17.223 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [redis.go:145] 2021-06-02 21:28:27.253 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:31] 2021-06-02 21:28:30.255 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [main.go:19] 2021-06-02 21:29:09.307 [0m msg:开始加载配置文件 

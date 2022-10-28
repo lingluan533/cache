@@ -1,0 +1,652 @@
+[1;1;32m[info:] [main.go:19] 2021-06-09 21:09:57.718 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:07.743 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:07.743 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:07.743 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:07.743 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:07.747 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:07.748 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:07.748 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:07.797 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:07.749 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:07.749 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:10:07.799 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:10:10.802 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:10:10.803 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:10:11.123 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:10:11.124 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:10:11.125 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:10:11.126 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:10:11.126 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:17.743 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:17.743 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:17.745 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:17.746 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:17.746 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:17.747 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:17.748 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:17.747 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:17.750 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:17.751 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:10:17.753 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:10:20.805 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:10:20.805 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:10:21.117 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:10:21.118 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:10:21.118 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:10:21.119 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:10:21.120 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:27.738 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:27.738 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:27.739 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:27.740 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:27.741 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:27.741 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:27.742 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:27.742 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:27.744 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:27.744 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:10:27.745 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:10:30.755 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:10:30.756 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:10:31.067 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:10:31.068 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:10:31.070 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:10:31.070 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:10:31.071 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:37.749 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:37.749 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:37.749 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:37.751 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:37.752 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:10:37.753 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:37.754 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:37.751 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:37.755 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:37.757 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:37.758 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:10:40.766 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:10:40.767 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:10:41.082 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:10:41.083 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:10:41.085 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:10:41.085 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:10:41.087 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:47.743 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:47.744 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:47.744 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:47.744 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:47.746 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:47.747 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:10:47.748 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:47.748 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:47.748 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:47.750 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:47.749 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:10:50.764 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:10:50.764 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:10:51.072 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:10:51.072 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:10:51.073 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:10:51.074 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:10:51.075 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:57.734 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:57.734 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:57.734 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:57.734 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:10:57.735 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:57.736 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:57.736 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:57.736 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:10:57.737 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:57.738 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:10:57.738 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:11:00.740 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:11:00.741 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:11:01.053 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:11:01.054 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:11:01.054 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:11:01.056 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:11:01.057 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:07.735 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:07.735 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:07.737 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:07.735 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:07.735 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:07.739 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:11:07.740 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:07.741 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:07.741 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:07.743 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:07.743 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:11:10.753 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:11:10.754 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:11:11.063 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:11:11.064 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:11:11.065 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:11:11.066 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:11:11.066 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:17.749 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:17.750 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:17.751 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:17.752 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:17.753 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:17.753 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:17.754 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:11:17.755 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:17.756 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:17.757 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:17.757 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:11:20.758 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:11:20.759 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:11:21.066 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:11:21.066 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:11:21.067 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:11:21.067 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:11:21.067 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:27.735 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:27.736 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:27.736 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:27.737 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:27.738 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:27.739 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:27.739 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:27.739 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:27.743 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:11:27.744 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:27.744 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:11:30.745 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:11:30.746 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:11:31.051 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:11:31.052 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:11:31.054 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:11:31.055 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:11:31.056 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:37.745 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:37.746 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:37.746 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:37.746 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:37.749 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:37.750 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:37.751 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:37.752 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:37.752 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:11:37.753 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:37.754 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:11:40.769 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:11:40.769 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:11:41.080 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:11:41.080 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:11:41.082 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:11:41.083 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:11:41.084 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:47.744 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:47.744 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:47.745 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:47.746 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:47.746 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:47.746 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:47.749 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:47.750 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:47.750 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:47.750 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:11:47.751 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:11:50.758 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:11:50.759 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:11:51.065 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:11:51.065 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:11:51.065 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:11:51.066 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:11:51.066 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:57.734 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:57.735 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:57.736 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:11:57.737 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:57.738 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:57.739 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:57.739 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:11:57.739 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:57.743 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:57.743 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:11:57.745 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:12:00.742 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:12:00.743 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:12:01.050 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:12:01.051 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:12:01.052 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:12:01.053 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:12:01.054 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:07.736 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:07.737 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:07.738 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:07.739 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:07.739 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:07.739 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:07.741 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:07.742 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:07.743 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:07.743 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:12:07.744 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:12:10.751 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:12:10.752 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:12:11.061 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:12:11.062 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:12:11.062 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:12:11.063 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:12:11.064 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [main.go:19] 2021-06-09 21:12:17.162 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:27.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:27.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:27.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:27.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:27.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:27.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:27.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:27.189 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:12:27.190 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:27.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:27.192 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:12:30.193 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:12:30.194 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:12:30.517 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:12:30.517 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:12:30.517 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:12:30.517 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:12:30.518 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:37.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:37.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:37.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:37.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:37.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:37.188 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:37.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:37.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:37.190 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:12:37.190 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:37.190 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:12:40.197 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:12:40.198 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:12:40.511 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:12:40.512 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:12:40.513 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:12:40.514 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:12:40.514 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:47.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:47.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:47.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:47.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:47.188 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:47.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:47.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:47.189 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:12:47.191 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:47.190 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:47.192 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:12:50.211 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:12:50.212 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:12:50.535 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:12:50.536 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:12:50.537 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:12:50.537 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:12:50.538 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:57.188 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:57.188 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:57.190 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:57.191 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:57.191 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:12:57.191 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:57.193 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:12:57.194 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:57.193 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:57.196 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:12:57.196 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:13:00.198 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:13:00.198 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:13:00.507 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:13:00.508 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:13:00.508 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:13:00.510 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:13:00.510 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:07.179 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:07.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:07.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:07.181 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:07.182 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:07.183 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:13:07.183 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:07.184 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:07.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:07.183 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:07.187 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:13:10.188 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:13:10.188 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:13:10.502 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:13:10.503 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:13:10.504 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:13:10.505 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:13:10.505 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:17.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:17.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:17.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:17.186 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:17.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:17.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:17.187 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:17.187 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:17.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:17.190 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:13:17.191 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:13:20.203 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:13:20.204 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:13:20.522 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:13:20.523 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:13:20.524 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:13:20.525 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:13:20.525 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:27.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:27.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:27.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:27.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:27.187 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:27.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:27.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:27.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:27.190 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:13:27.191 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:27.192 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:13:30.198 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:13:30.198 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:13:30.519 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:13:30.520 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:13:30.521 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:13:30.522 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:13:30.522 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:37.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:37.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:37.182 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:37.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:37.183 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:37.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:37.184 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:37.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:37.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:37.187 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:13:37.188 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:13:40.190 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:13:40.191 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:13:40.508 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:13:40.509 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:13:40.510 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:13:40.511 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:13:40.512 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:47.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:47.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:47.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:47.186 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:47.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:47.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:47.188 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:13:47.188 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:47.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:47.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:47.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:13:50.193 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:13:50.194 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:13:50.502 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:13:50.503 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:13:50.504 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:13:50.505 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:13:50.506 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:57.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:57.188 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:57.189 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:57.189 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:13:57.190 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:57.191 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:57.192 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:57.192 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:57.194 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:13:57.194 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:13:57.195 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:14:00.201 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:14:00.202 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:14:00.516 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:14:00.516 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:14:00.517 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:14:00.518 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:14:00.518 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:07.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:07.181 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:07.182 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:07.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:07.184 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:07.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:07.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:07.187 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:07.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:14:07.188 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:07.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:14:10.191 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:14:10.192 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:14:10.503 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:14:10.504 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:14:10.504 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:14:10.505 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:14:10.505 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:17.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:17.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:17.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:17.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:17.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:17.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:17.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:17.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:17.190 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:17.190 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:14:17.192 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:14:20.201 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:14:20.202 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:14:20.510 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:14:20.511 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:14:20.512 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:14:20.513 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:14:20.513 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:27.179 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:27.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:27.181 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:27.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:27.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:27.183 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:27.184 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:27.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:27.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:27.186 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:14:27.186 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:14:30.198 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:14:30.198 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:14:30.514 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:14:30.515 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:14:30.516 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:14:30.516 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:14:30.516 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:37.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:37.188 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:37.189 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:14:37.190 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:37.190 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:37.191 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:37.189 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:37.193 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:37.193 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:37.194 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:37.194 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:14:40.192 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:14:40.193 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:14:40.509 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:14:40.510 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:14:40.511 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:14:40.512 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:14:40.512 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:47.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:47.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:47.189 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:47.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:47.188 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:47.191 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:47.192 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:47.193 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:47.193 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:14:47.195 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:47.195 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:14:50.206 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:14:50.207 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:14:50.515 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:14:50.515 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:14:50.516 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:14:50.517 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:14:50.518 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:57.179 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:57.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:57.181 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:57.182 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:57.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:14:57.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:57.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:57.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:57.186 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:14:57.187 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:14:57.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:15:00.214 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:15:00.214 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:15:00.523 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:15:00.524 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:15:00.525 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:15:00.526 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:15:00.526 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:07.189 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:07.190 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:07.189 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:07.192 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:07.190 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:07.194 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:07.195 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:15:07.195 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:07.196 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:07.196 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:07.196 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:15:10.200 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:15:10.201 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:15:10.507 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:15:10.507 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:15:10.508 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:15:10.509 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:15:10.509 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:17.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:17.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:17.185 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:17.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:17.186 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:17.187 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:17.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:17.189 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:15:17.190 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:17.190 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:17.191 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:15:20.193 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:15:20.195 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:15:20.502 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:15:20.503 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:15:20.504 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:15:20.505 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:15:20.506 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:27.179 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:27.181 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:27.181 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:27.182 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:27.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:27.184 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:27.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:27.186 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:27.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:27.186 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:15:27.186 [0m msg:start to process data 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:15:30.204 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:15:30.205 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:15:30.517 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:15:30.517 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:15:30.518 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:15:30.519 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:15:30.519 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:37.180 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:37.181 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:37.182 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:37.183 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:37.183 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:37.184 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:37.185 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:37.185 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:37.187 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:15:37.188 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:37.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:15:40.189 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:15:40.190 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:15:40.501 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:15:40.502 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:15:40.503 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:15:40.503 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:15:40.504 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:47.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:47.188 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:47.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:47.189 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:47.190 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:47.191 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:47.192 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:47.193 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:15:47.193 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:47.194 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:47.195 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:15:50.197 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:15:50.198 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:15:50.505 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:15:50.507 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:15:50.507 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:15:50.509 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:15:50.509 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:57.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:57.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:57.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:57.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:15:57.187 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:57.188 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:15:57.188 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:57.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:57.188 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:57.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:15:57.189 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [rpc_client.go:32] 2021-06-09 21:16:00.195 [0m msg:start ServiceDiscovery... 
+[1;1;32m[info:] [rpc_client.go:34] 2021-06-09 21:16:00.196 [0m msg:111111 
+[1;1;32m[info:] [testdis.go:72] 2021-06-09 21:16:00.507 [0m msg:put key :video/node1val:localhost:8000 
+[1;1;32m[info:] [testdis.go:107] 2021-06-09 21:16:00.508 [0m msg:ans: [localhost:8000] 
+[1;1;32m[info:] [testdis.go:54] 2021-06-09 21:16:00.509 [0m msg:watching prefix:video now... 
+[1;1;32m[info:] [rpc_client.go:40] 2021-06-09 21:16:00.510 [0m msg:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
+[1;1;32m[info:] [rpc_client.go:41] 2021-06-09 21:16:00.511 [0m msg:find active node list: [localhost:8000] 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:16:07.190 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:16:07.190 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:16:07.193 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:16:07.193 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:92] 2021-06-09 21:16:07.195 [0m msg:时间触发 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:16:07.196 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:16:07.195 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:16:07.199 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:16:07.200 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [redis.go:137] 2021-06-09 21:16:07.201 [0m msg:start to process data 
+[1;1;32m[info:] [redis.go:134] 2021-06-09 21:16:07.201 [0m msg:待发送数据:[] 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:18:25.330 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:21:34.282 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:24:32.685 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:26:07.614 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:27:17.584 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:27:57.182 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:31:11.743 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:33:27.318 [0m msg:开始加载配置文件 
+[1;1;32m[info:] [main.go:20] 2021-06-09 21:35:14.924 [0m msg:开始加载配置文件 

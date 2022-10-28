@@ -1,0 +1,140 @@
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:10:10.801 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:10:14.130 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:10:14.131 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:10:14.132 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:10:20.756 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:10:24.121 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:10:24.122 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:10:24.122 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:10:30.754 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:10:34.084 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:10:34.085 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:10:34.086 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:10:40.765 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:10:44.098 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:10:44.099 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:10:44.100 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:10:50.763 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:10:54.076 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:10:54.076 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:10:54.077 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:11:00.739 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:11:04.062 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:11:04.063 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:11:04.064 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:11:10.752 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:11:14.073 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:11:14.074 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:11:14.075 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:11:20.757 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:11:24.073 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:11:24.073 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:11:24.074 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:11:30.745 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:11:34.062 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:11:34.063 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:11:34.064 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:11:40.769 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:11:44.086 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:11:44.086 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:11:44.087 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:11:50.758 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:11:54.074 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:11:54.075 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:11:54.076 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:12:00.741 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:12:04.055 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:12:04.055 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:12:04.056 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:12:10.750 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:12:14.065 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:12:14.066 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:12:14.066 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:12:30.192 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:12:33.518 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:12:33.519 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:12:33.520 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:12:40.196 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:12:43.530 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:12:43.530 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:12:43.531 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:12:50.210 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:12:53.547 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:12:53.548 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:12:53.549 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:13:00.197 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:13:03.529 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:13:03.530 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:13:03.530 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:13:10.186 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:13:13.510 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:13:13.511 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:13:13.511 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:13:20.202 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:13:23.550 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:13:23.550 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:13:23.551 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:13:30.197 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:13:33.530 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:13:33.531 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:13:33.532 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:13:40.189 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:13:43.522 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:13:43.522 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:13:43.523 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:13:50.192 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:13:53.511 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:13:53.512 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:13:53.512 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:14:00.200 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:14:03.528 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:14:03.529 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:14:03.530 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:14:10.190 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:14:13.515 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:14:13.515 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:14:13.516 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:14:20.200 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:14:23.518 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:14:23.518 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:14:23.519 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:14:30.197 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:14:33.523 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:14:33.523 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:14:33.524 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:14:40.191 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:14:43.515 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:14:43.516 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:14:43.517 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:14:50.205 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:14:53.519 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:14:53.520 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:14:53.521 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:15:00.213 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:15:03.535 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:15:03.536 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:15:03.537 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:15:10.200 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:15:13.521 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:15:13.522 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:15:13.523 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:15:20.193 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:15:23.511 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:15:23.512 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:15:23.512 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:15:30.203 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:15:33.531 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:15:33.531 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:15:33.531 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:15:40.188 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:15:43.510 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:15:43.511 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:15:43.511 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:15:50.197 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:15:53.515 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:15:53.516 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:15:53.517 [0m msg:sendDataBlock error:context deadline exceeded 
+[1;1;31m[error:] [rpc_client.go:29] 2021-06-09 21:16:00.194 [0m msg:did not connect to the leader in config.yaml: 10.28.167.2:8880 
+[1;1;31m[error:] [rpc_client.go:50] 2021-06-09 21:16:03.520 [0m msg:did not connect: localhost:8000 
+[1;1;31m[error:] [redis.go:139] 2021-06-09 21:16:03.521 [0m msg:rpcClient error: context deadline exceeded 
+[1;1;31m[error:] [redis.go:94] 2021-06-09 21:16:03.522 [0m msg:sendDataBlock error:context deadline exceeded 

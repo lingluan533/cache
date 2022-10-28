@@ -1,0 +1,19 @@
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:17.241 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:17.241 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:17.242 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:17.242 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:17.242 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:135] 2021-06-02 21:28:27.242 [0m msg:待发送数据:[] 
+[1;1;34m[debug:] [redis.go:135] 2021-06-02 21:28:27.243 [0m msg:待发送数据:[] 
+[1;1;34m[debug:] [redis.go:135] 2021-06-02 21:28:27.243 [0m msg:待发送数据:[{"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"456","receiptValue":1,"version":"v1","userName":"lwq","operationType":"copy","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"123","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"} {"createTimestamp":"2021-05-27 20:31:10.110","entityId":"001","keyId":"123","receiptValue":1,"version":"v1","userName":"lwq","operationType":"create","dataType":"video","serviceType":"school","fileName":"test.mp4","fileSize":100,"fileHash":"asdfghjkl","uri":"/abc","parentKeyId":"000","attachmentFileUris":["/aaa","/bbb"],"attachmentTotalHash":"zxcvbnm"}] 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:27.253 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:135] 2021-06-02 21:28:27.254 [0m msg:待发送数据:[] 
+[1;1;34m[debug:] [redis.go:135] 2021-06-02 21:28:27.254 [0m msg:待发送数据:[] 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:27.254 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:27.254 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:28:27.255 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:29:09.326 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:29:09.326 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:29:09.326 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:29:09.326 [0m msg:时间触发 
+[1;1;34m[debug:] [redis.go:91] 2021-06-02 21:29:09.326 [0m msg:时间触发 

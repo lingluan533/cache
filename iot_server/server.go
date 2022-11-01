@@ -4,6 +4,7 @@ import (
 	"cache/backend"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -246,22 +247,26 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 	})
 	type QueryBlocks struct {
 		StartTime string `json:"StartTime" xml:"StartTime" form:"StartTime" query:"StartTime"`
-		EndTime string `json:"EndTime" xml:"EndTime" form:"EndTime" query:"EndTime"`
-
+		EndTime   string `json:"EndTime" xml:"EndTime" form:"EndTime" query:"EndTime"`
 	}
 	e.POST("/queryTimeReceipt", func(c echo.Context) error {
-		log.Info("按时间戳查询存证数据")
+
 		st := c.FormValue("StartTime")
 		et := c.FormValue("EndTime")
-		start, _ := time.Parse("2006-01-02 15:04:05",st)
-		end, _ := time.Parse("2006-01-02 15:04:05", et)
-		fmt.Println(start)
-		fmt.Println(end)
-		fmt.Println(start.Unix())
-		fmt.Println(end.Unix())
+		log.Infof("按时间戳查询数据,startTime%v,endtime:%v", st, et)
+		startTime, err := strconv.ParseInt(st, 10, 64)
+		if err != nil {
+			log.Error("queryTimeReceipt timestamp err")
+			return c.JSON(http.StatusInternalServerError, errors.New("queryTimeReceipt startTime timestamp err"))
+		}
+		endTime, err := strconv.ParseInt(et, 10, 64)
+		if err != nil {
+			log.Error("queryTimeReceipt timestamp err")
+			return c.JSON(http.StatusInternalServerError, errors.New("queryTimeReceipt endTime timestamp err"))
+		}
 		res, err := rdb.ZRangeByScore(ctx, "ReceiptSet", &redis.ZRangeBy{
-			Min: strconv.FormatInt(start.Unix(), 10),
-			Max: strconv.FormatInt(end.Unix(), 10),
+			Min: strconv.FormatInt(startTime, 10),
+			Max: strconv.FormatInt(endTime, 10),
 		}).Result()
 		fmt.Println(res)
 		if err != nil {
@@ -270,23 +275,31 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 			log.Error("GET error: ", err)
 			return c.JSON(http.StatusOK, res)
 		}
-		log.Info("查询存证数据成功: ", res)
+		log.Info("查询存证数据成功: ")
 		return c.JSON(http.StatusOK, res)
 	})
 	e.POST("/queryTimeTransaction", func(c echo.Context) error {
-		log.Info("按时间戳查询交易数据")
-		start, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("StartTime"))
-		end, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("EndTime"))
+
+		st := c.FormValue("StartTime")
+		et := c.FormValue("EndTime")
+		log.Infof("按时间戳查询交易数据,startTime%v,endtime:%v", st, et)
+		startTime, err := strconv.ParseInt(st, 10, 64)
+		if err != nil {
+			log.Error("queryTimeReceipt timestamp err")
+			return c.JSON(http.StatusInternalServerError, errors.New("queryTimeReceipt startTime timestamp err"))
+		}
+		endTime, err := strconv.ParseInt(et, 10, 64)
+
 		res, err := rdb.ZRangeByScore(ctx, "TransactionSet", &redis.ZRangeBy{
-			Min: strconv.FormatInt(start.Unix(), 10),
-			Max: strconv.FormatInt(end.Unix(), 10),
+			Min: strconv.FormatInt(startTime, 10),
+			Max: strconv.FormatInt(endTime, 10),
 		}).Result()
 
 		if err != nil {
 			log.Error("GET error: ", err)
 			return c.JSON(http.StatusOK, res)
 		}
-		log.Info("查询交易数据成功: ", res)
+		log.Info("查询交易数据成功: ")
 		return c.JSON(http.StatusOK, res)
 	})
 	return e

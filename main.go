@@ -28,7 +28,8 @@ func main() {
 	logger.Init()
 	ctx := context.Background()
 	config := config.Initialize()
-	log.Info("配置文件加载完成")
+	log.Println("配置文件加载完成")
+	log.Println(config)
 	//读取config.yaml中的内容
 	if !config.Common.LogConfig.OutputFile {
 		log.SetOutput(os.Stdout)
@@ -108,7 +109,7 @@ func main() {
 	go Monitor(ctx, redisClient)
 	httpServer := iot_server.NewIOTServer(ctx, results, redisClient)
 	// consul client registe
-	consulClientRegiste()
+	consulClientRegiste(&config)
 	//启动echo服务
 	httpServer.Logger.Fatal(httpServer.Start(config.Cache.RedisGroup["redis1"].WebService.URL))
 }
@@ -183,7 +184,7 @@ func consumeResult(ctx context.Context, rdb *redis.Client, config *dataStruct.Gl
 		}
 	}
 }
-func Monitor(ctx context.Context, redisClient *redis.Client){
+func Monitor(ctx context.Context, redisClient *redis.Client) {
 	ticker := time.NewTicker(time.Second * 10)
 	for {
 		<-ticker.C
@@ -195,28 +196,35 @@ func Monitor(ctx context.Context, redisClient *redis.Client){
 	}
 }
 
-func consulClientRegiste(){
+func consulClientRegiste(globalConfig *dataStruct.GlobalConfig) {
 	// 服务注册
 	// 1.初始化 consul 配置
 	consulConfig := api.DefaultConfig()
-	consulConfig.Address = "101.43.138.160:8500"
+	config := globalConfig.Consul
+	consulConfig.Address = config.ConsulAddress + ":" + config.ConsulPort
 	// 2.创建 consul 对象
 	consulClient, _ := api.NewClient(consulConfig)
 	// 3.注册的服务配置
+	log.Println(config.Name)
 	reg := api.AgentServiceRegistration{
-		ID:      "userService id",
-		Name:    "userService",
-		Tags:    []string{"consul", "http"},
-		Address: "192.168.195.164",
-		Port:    9000,
+		ID:                config.ID,
+		Name:              config.Name,
+		Tags:              []string{"consul", "http", "edgenode"},
+		Address:           config.LocalAddress,
+		Port:              config.LocalServicePort,
+		EnableTagOverride: true,
 		Check: &api.AgentServiceCheck{
-			CheckID:  "consul grpc test",
-			TCP:      "192.168.195.164:9000",
-			Timeout:  "1s",
-			Interval: "5s",
+			CheckID:                        config.HealthCheckID,
+			TCP:                            config.HealthTCP,
+			Timeout:                        config.HealthTimeout,
+			Interval:                       config.HealthInterval,
+			DeregisterCriticalServiceAfter: "20s",
 		},
 	}
+	log.Println(reg)
 	// 4. 注册 grpc 服务到 consul 上
-	consulClient.Agent().ServiceRegister(&reg)
-
+	err := consulClient.Agent().ServiceRegister(&reg)
+	if err != nil {
+		log.Println(err)
+	}
 }

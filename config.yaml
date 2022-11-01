@@ -64,7 +64,7 @@ consensus:
     max_live_days: 1
   etcd_group:
     leader:
-       hraft_grpc_address: "0.0.0.0:8880"
+       hraft_grpc_address: "127.0.0.1:8880"
        block_grpc_address: "10.112.235.124:8889"
        host: "localhost"
        port: 2379
@@ -156,3 +156,16 @@ p2p:
     port: "6000"
     host: "0.0.0.0"
     groups:  [redis1,leader]
+
+ConsulConfig:
+  consul_address: "101.43.138.160"
+  consul_port: "8500"
+  ID: "EdgeNode001"
+  Name: "EdgeNode"
+  LocalAddress: "192.168.195.164"
+  LocalServicePort: 9000
+  HealthCheckID: "consul grpc test"
+  HealthTCP: "192.168.195.164:9000"
+  HealthTimeout: "2s"
+  HealthInterval: "6s"
+

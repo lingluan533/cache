@@ -9,6 +9,7 @@ type GlobalConfig struct {
 	Consensus ConsensusConfig `yaml:"consensus"`
 	Block     BlockConfig     `yaml:"block"`
 	P2p       P2pConfig       `yaml:"p2p"`
+	Consul    ConsulConfig    `yaml:"ConsulConfig"`
 }
 
 type ClientConfig struct {
@@ -33,7 +34,7 @@ type LogConfig struct {
 	DebugLogName string `yaml:"debug_log_name"`
 	ErrorLogName string `yaml:"error_log_name"`
 	LogLevel     string `yaml:"log_level"`
-	OutputFile bool `yaml:"output_file"`
+	OutputFile   bool   `yaml:"output_file"`
 }
 
 type LedgerConfig struct {
@@ -80,8 +81,8 @@ type ConsensusCommonConfig struct {
 type EtcdConfig struct {
 	HraftGrpcAddress string `yaml:"hraft_grpc_address"`
 	BlockGrpcAddress string `yaml:"block_grpc_address"`
-	Host        string `yaml:"host"`
-	Port        string `yaml:"port"`
+	Host             string `yaml:"host"`
+	Port             string `yaml:"port"`
 }
 
 type TaskConfig struct {
@@ -141,4 +142,17 @@ type LocalConfig struct {
 	Port       string   `yaml:"port"`
 	Host       string   `yaml:"host"`
 	Groups     []string `yaml:"groups,flow"`
+}
+
+type ConsulConfig struct {
+	ConsulAddress    string `yaml:"consul_address"`
+	ConsulPort       string `yaml:"consul_port"`
+	ID               string `yaml:"ID"`
+	Name             string `yaml:"Name"`
+	LocalAddress     string `yaml:"LocalAddress"`
+	LocalServicePort int    `yaml:"LocalServicePort"`
+	HealthCheckID    string `yaml:"HealthCheckID"`
+	HealthTCP        string `yaml:"HealthTCP"`
+	HealthTimeout    string `yaml:"HealthTimeout"`
+	HealthInterval   string `yaml:"HealthInterval"`
 }

@@ -22,20 +22,20 @@ type server struct{} //定义一个server结构体
 // }
 
 //遍历开启端口
-func StartGrpcPort(port string) {
-	lis, err := net.Listen("tcp", port)
-	if err != nil {
-		log.Error("开启端口失败: ", err)
-	}
-	log.Info("端口开启成功！", Port)
-
-	s := grpc.NewServer()
-	pb.RegisterToUpperServer(s, &server{})
-	//reflection.Register(s)
-	if err := s.Serve(lis); err != nil {
-		log.Error("端口服务调用失败: ", err)
-	}
-}
+//func StartGrpcPort(port string) {
+//	lis, err := net.Listen("tcp", port)
+//	if err != nil {
+//		log.Error("开启端口失败: ", err)
+//	}
+//	log.Info("端口开启成功！", Port)
+//
+//	s := grpc.NewServer()
+//	pb.RegisterToUpperServer(s, &server{})
+//	//reflection.Register(s)
+//	if err := s.Serve(lis); err != nil {
+//		log.Error("端口服务调用失败: ", err)
+//	}
+//}
 
 //grpc测试接口
 func (s *server) Upper(ctx context.Context, in *pb.UpperRequest) (*pb.UpperReply, error) {

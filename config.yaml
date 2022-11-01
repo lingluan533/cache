@@ -42,7 +42,7 @@ common:
 cache:
   common_config:
     db: 0
-    password: "JAYlingluan/0118"
+    password: ""
     #按时间推送的时间间隔
     sync_interval: 20
     sync_size_limit: 1

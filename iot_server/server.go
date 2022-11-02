@@ -9,13 +9,16 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+	"os"
+	"io/ioutil"
+
 
 	"github.com/go-playground/validator/v10"
 	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo/v4"
 	log "github.com/sirupsen/logrus"
 )
-
+var LOC, _ = time.LoadLocation("Asia/Shanghai")
 func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Client) *echo.Echo {
 	e := echo.New()
 	e.HTTPErrorHandler = ErrorHandler
@@ -208,43 +211,43 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		log.Info("查询交易数据成功")
 		return c.JSON(http.StatusOK, respInfo)
 	})
-	e.POST("/queryTimeReceipt", func(c echo.Context) error {
-		//c是提交的参数，
-		// if err := c.Bind(&m); err != nil {
-		// 	return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
-		// }
-		log.Info("按时间戳查询存证数据")
-		//var respInfo ReceiptResponseInfo
-		//start := c.FormValue("StartTime")
-		//end := c.FormValue("EndTime")
-		start, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("StartTime"))
-		end, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("EndTime"))
-		res, err := rdb.ZRangeByScore(ctx, "zSet", &redis.ZRangeBy{
-			Min: strconv.FormatInt(start.Unix(), 10),
-			Max: strconv.FormatInt(end.Unix(), 10),
-		}).Result()
-
-		if err != nil {
-			// respInfo.Success = false
-			// respInfo.Err = "GET error"
-			log.Error("GET error: ", err)
-			return c.JSON(http.StatusOK, res)
-		}
-		// fmt.Println(res)
-		//将查到的多条结果赋值给数据结构
-		// if err := json.Unmarshal([]byte(res), &respInfo.DataReceipt); err != nil {
-		// 	fmt.Println(string(res))
-		// 	respInfo.Success = false
-		// 	respInfo.Err = "Unmarshal error"
-		// 	log.Error("Unmarshal error: ", err)
-		// 	return c.JSON(http.StatusOK, res)
-		// }
-		// respInfo.Success = true
-		// respInfo.Status = true
-		//log.Info("zSet Success: ", string(data))
-		log.Info("查询存证数据成功: ", res)
-		return c.JSON(http.StatusOK, res)
-	})
+	//e.POST("/queryTimeReceipt", func(c echo.Context) error {
+	//	//c是提交的参数，
+	//	// if err := c.Bind(&m); err != nil {
+	//	// 	return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
+	//	// }
+	//	log.Info("按时间戳查询存证数据")
+	//	//var respInfo ReceiptResponseInfo
+	//	//start := c.FormValue("StartTime")
+	//	//end := c.FormValue("EndTime")
+	//	start, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("StartTime"))
+	//	end, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("EndTime"))
+	//	res, err := rdb.ZRangeByScore(ctx, "zSet", &redis.ZRangeBy{
+	//		Min: strconv.FormatInt(start.Unix(), 10),
+	//		Max: strconv.FormatInt(end.Unix(), 10),
+	//	}).Result()
+	//
+	//	if err != nil {
+	//		// respInfo.Success = false
+	//		// respInfo.Err = "GET error"
+	//		log.Error("GET error: ", err)
+	//		return c.JSON(http.StatusOK, res)
+	//	}
+	//	// fmt.Println(res)
+	//	//将查到的多条结果赋值给数据结构
+	//	// if err := json.Unmarshal([]byte(res), &respInfo.DataReceipt); err != nil {
+	//	// 	fmt.Println(string(res))
+	//	// 	respInfo.Success = false
+	//	// 	respInfo.Err = "Unmarshal error"
+	//	// 	log.Error("Unmarshal error: ", err)
+	//	// 	return c.JSON(http.StatusOK, res)
+	//	// }
+	//	// respInfo.Success = true
+	//	// respInfo.Status = true
+	//	//log.Info("zSet Success: ", string(data))
+	//	log.Info("查询存证数据成功: ", res)
+	//	return c.JSON(http.StatusOK, res)
+	//})
 	type QueryBlocks struct {
 		StartTime string `json:"StartTime" xml:"StartTime" form:"StartTime" query:"StartTime"`
 		EndTime   string `json:"EndTime" xml:"EndTime" form:"EndTime" query:"EndTime"`
@@ -302,6 +305,38 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		log.Info("查询交易数据成功: ")
 		return c.JSON(http.StatusOK, res)
 	})
+
+	//接收到请求后根据数据类型进行分类，然后到指定路径查询账本内容返回，
+	e.POST("/queryBlockInfos", func(c echo.Context) error {
+
+		log.Info("按时间戳查询存证数据1")
+		ledger := c.FormValue("blockType")
+		c.FormValue("StartTime")
+		start, err := time.ParseInLocation("2006-01-02 15:04:05", c.FormValue("StartTime"), LOC)
+		if err != nil {
+			log.Error("GET error: ", err)
+			return c.JSON(http.StatusOK, nil)
+		}
+		time, index := backend.GetIndexMinInt(fmt.Sprint(start))
+		log.Info(time,"+",index)
+		//}
+
+		var (
+			fileName = "D:\\Go\\src\\hraft1102" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/"
+		)
+		blockHeader := []backend.BlockHeader{}
+		for i:=0; i<20 && index-i>0 ; i++{
+			tmp := ReadTxMinFiletoTenmin(fileName + strconv.Itoa(index-i))
+			if tmp.KeyId == ""{
+				continue
+			}
+			blockHeader = append(blockHeader,tmp)
+		}
+		//res, _ := json.Marshal(blockHeader)
+
+		log.Info("查询区块头数据成功: ", blockHeader)
+		return c.JSON(http.StatusOK, blockHeader)
+	})
 	return e
 }
 
@@ -314,4 +349,32 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 		return err
 	}
 	return nil
+}
+func ReadTxMinFiletoTenmin(fileName string) backend.BlockHeader{
+
+	log.Info("区块文件名：", fileName)
+	_, err := os.Stat(fileName)
+	if os.IsNotExist(err) {
+		log.Info("区块文件不存在")
+		return backend.BlockHeader{}
+	}else {
+		log.Info("文件存在，开始查询")
+		jsonfile,_ := os.Open(fileName)
+		defer jsonfile.Close()
+		//读取文件
+		fileContent, err := ioutil.ReadAll(jsonfile)
+		if err != nil {
+			log.Error("Read file err =: ", err)
+		}
+		//fmt.Println(string(fileContent))
+		var minBlock backend.MinuteDataBlock
+		//var user User
+		if err := json.Unmarshal([]byte(fileContent), &minBlock); err != nil {
+			log.Error("反解析 file error =: ", err)
+		}
+
+		//fmt.Println(minBlock.Header)
+		//fmt.Println(len(minBlock.DataReceipts))
+		return minBlock.Header
+	}
 }

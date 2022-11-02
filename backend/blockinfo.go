@@ -67,6 +67,18 @@ type DataReceiptBlockInfo struct {
 	Version          string `json:"Version"`                    //版本号
 	BlockType        string `json:"BlockType"`                //区块类型
 }
+// 实时交易记录
+type Transaction struct {
+	Timestamp     string  `json:"timeStamp" validate:"required"`
+	EntityId      string  `json:"entityId"`
+	TransactionId string  `json:"transactionId" validate:"required"`
+	Initiator     string  `json:"initiator"`
+	Recipient     string  `json:"recipient"`
+	TxAmount      float64 `json:"txAmount"`
+	DataType      string  `json:"dataType" validate:"required"`
+	ServiceType   string  `json:"serviceType"`
+	Remark        string  `json:"remark"`
+}
 //返回读取到的文件信息
 func ReadTxMinFiletoTenmin(time string, ledger string, index string) MinuteDataBlock{
 	//time是日期，index是当前分钟数
@@ -76,7 +88,9 @@ func ReadTxMinFiletoTenmin(time string, ledger string, index string) MinuteDataB
 	//}
 	var (
 		fileName = "D:\\Go\\src\\hraft1102" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/" + index
-	)
+	//var (
+	//	fileName = "E:\\Go\\go\\src\\cache" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/" + index
+	//)
 	//fmt.Println(fileName)
 	log.Info("区块文件名：", fileName)
 	_, err := os.Stat(fileName)

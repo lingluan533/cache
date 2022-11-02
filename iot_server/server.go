@@ -9,13 +9,16 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+	"os"
+	"io/ioutil"
+
 
 	"github.com/go-playground/validator/v10"
 	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo/v4"
 	log "github.com/sirupsen/logrus"
 )
-
+var LOC, _ = time.LoadLocation("Asia/Shanghai")
 func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Client) *echo.Echo {
 	e := echo.New()
 	e.HTTPErrorHandler = ErrorHandler
@@ -296,6 +299,38 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		log.Info("查询交易数据成功: ")
 		return c.JSON(http.StatusOK, res)
 	})
+
+	//接收到请求后根据数据类型进行分类，然后到指定路径查询账本内容返回，
+	e.POST("/queryBlockInfos", func(c echo.Context) error {
+
+		log.Info("按时间戳查询存证数据1")
+		ledger := c.FormValue("blockType")
+		c.FormValue("StartTime")
+		start, err := time.ParseInLocation("2006-01-02 15:04:05", c.FormValue("StartTime"), LOC)
+		if err != nil {
+			log.Error("GET error: ", err)
+			return c.JSON(http.StatusOK, nil)
+		}
+		time, index := backend.GetIndexMinInt(fmt.Sprint(start))
+		log.Info(time,"+",index)
+		//}
+
+		var (
+			fileName = "D:\\Go\\src\\hraft1102" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/"
+		)
+		blockHeader := []backend.BlockHeader{}
+		for i:=0; i<20 && index-i>0 ; i++{
+			tmp := ReadTxMinFiletoTenmin(fileName + strconv.Itoa(index-i))
+			if tmp.KeyId == ""{
+				continue
+			}
+			blockHeader = append(blockHeader,tmp)
+		}
+		//res, _ := json.Marshal(blockHeader)
+
+		log.Info("查询区块头数据成功: ", blockHeader)
+		return c.JSON(http.StatusOK, blockHeader)
+	})
 	return e
 }
 
@@ -308,4 +343,32 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 		return err
 	}
 	return nil
+}
+func ReadTxMinFiletoTenmin(fileName string) backend.BlockHeader{
+
+	log.Info("区块文件名：", fileName)
+	_, err := os.Stat(fileName)
+	if os.IsNotExist(err) {
+		log.Info("区块文件不存在")
+		return backend.BlockHeader{}
+	}else {
+		log.Info("文件存在，开始查询")
+		jsonfile,_ := os.Open(fileName)
+		defer jsonfile.Close()
+		//读取文件
+		fileContent, err := ioutil.ReadAll(jsonfile)
+		if err != nil {
+			log.Error("Read file err =: ", err)
+		}
+		//fmt.Println(string(fileContent))
+		var minBlock backend.MinuteDataBlock
+		//var user User
+		if err := json.Unmarshal([]byte(fileContent), &minBlock); err != nil {
+			log.Error("反解析 file error =: ", err)
+		}
+
+		//fmt.Println(minBlock.Header)
+		//fmt.Println(len(minBlock.DataReceipts))
+		return minBlock.Header
+	}
 }

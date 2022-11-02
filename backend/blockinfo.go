@@ -1,17 +1,17 @@
 package backend
 
 import (
-	"os"
 	"context"
+	"os"
 
-	"fmt"
-	"io/ioutil"
 	"encoding/json"
+	"fmt"
 	"github.com/go-redis/redis/v8"
-	_"time"
+	log "github.com/sirupsen/logrus"
+	"io/ioutil"
 	"strconv"
 	"strings"
-	log "github.com/sirupsen/logrus"
+	_ "time"
 )
 
 //type BlockHeaders struct{
@@ -26,19 +26,19 @@ type BlockHeader struct {
 	KeyId           string `json:"keyId,omitempty"`
 	BlockHeight     int64  `json:"BlockHeight,omitempty"` //通过该字段，获取当前区块 可以使用不同链
 	//具体数据结构类型
-	DataType         string `json:"DataType,omitempty"`                   //数据类型
-	DataValue        string `json:"DataValue,omitempty"`                 //数据价值
-	UpdateTimestamp  string `json:"UpdateTimestamp,omitempty"`     //更新时间戳
-	DataHash         string `json:"DataHash,omitempty"`                   //数据哈希值
-	BlockHash        string `json:"BlockHash,omitempty"`                 //区块哈希值
-	PreBlockHash     string `json:"PreBlockHash,omitempty"`           //前一个区块hash值
-	Nonce            int32  `json:"Nonce,omitempty"`                       //nonce 值
-	Target           int32  `json:"Target,omitempty"`                     //目标值
+	DataType         string `json:"DataType,omitempty"`         //数据类型
+	DataValue        string `json:"DataValue,omitempty"`        //数据价值
+	UpdateTimestamp  string `json:"UpdateTimestamp,omitempty"`  //更新时间戳
+	DataHash         string `json:"DataHash,omitempty"`         //数据哈希值
+	BlockHash        string `json:"BlockHash,omitempty"`        //区块哈希值
+	PreBlockHash     string `json:"PreBlockHash,omitempty"`     //前一个区块hash值
+	Nonce            int32  `json:"Nonce,omitempty"`            //nonce 值
+	Target           int32  `json:"Target,omitempty"`           //目标值
 	CurrentDataCount int64  `json:"CurrentDataCount,omitempty"` //当前数据记录量
-	CurrentDataSize  int64  `json:"CurrentDataSize,omitempty"`   //当前数据大小
-	Version          string `json:"Version,omitempty"`                    //版本号
-	BlockType        string `json:"BlockType,omitempty"`                //区块类型
-	LedgerType       string `json:"LedgerType,omitempty"`              //账本类型
+	CurrentDataSize  int64  `json:"CurrentDataSize,omitempty"`  //当前数据大小
+	Version          string `json:"Version,omitempty"`          //版本号
+	BlockType        string `json:"BlockType,omitempty"`        //区块类型
+	LedgerType       string `json:"LedgerType,omitempty"`       //账本类型
 }
 type DataReceipt struct {
 	CreateTimestamp     string   `json:"createTimestamp"`
@@ -60,15 +60,29 @@ type DataReceipt struct {
 }
 type DataReceiptBlockInfo struct {
 	DataReceipt
-	BlockHeight     int64  `json:"BlockHeight"` //通过该字段，获取当前区块 可以使用不同链
-	BlockHash        string `json:"BlockHash"`                 //区块哈希值
+	BlockHeight      int64  `json:"BlockHeight"`      //通过该字段，获取当前区块 可以使用不同链
+	BlockHash        string `json:"BlockHash"`        //区块哈希值
 	CurrentDataCount int64  `json:"CurrentDataCount"` //当前数据记录量
-	CurrentDataSize  int64  `json:"CurrentDataSize"`   //当前数据大小
-	Version          string `json:"Version"`                    //版本号
-	BlockType        string `json:"BlockType"`                //区块类型
+	CurrentDataSize  int64  `json:"CurrentDataSize"`  //当前数据大小
+	Version          string `json:"Version"`          //版本号
+	BlockType        string `json:"BlockType"`        //区块类型
 }
+
+// 实时交易记录
+type Transaction struct {
+	Timestamp     string  `json:"timeStamp" validate:"required"`
+	EntityId      string  `json:"entityId"`
+	TransactionId string  `json:"transactionId" validate:"required"`
+	Initiator     string  `json:"initiator"`
+	Recipient     string  `json:"recipient"`
+	TxAmount      float64 `json:"txAmount"`
+	DataType      string  `json:"dataType" validate:"required"`
+	ServiceType   string  `json:"serviceType"`
+	Remark        string  `json:"remark"`
+}
+
 //返回读取到的文件信息
-func ReadTxMinFiletoTenmin(time string, ledger string, index string) MinuteDataBlock{
+func ReadTxMinFiletoTenmin(time string, ledger string, index string) MinuteDataBlock {
 	//time是日期，index是当前分钟数
 	//mindirectory, err := os.Getwd()
 	//if err != nil {
@@ -77,15 +91,19 @@ func ReadTxMinFiletoTenmin(time string, ledger string, index string) MinuteDataB
 	var (
 		fileName = "D:\\Go\\src\\hraft1102" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/" + index
 	)
+	//var (
+	//	fileName = "E:\\Go\\go\\src\\cache" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/" + index
+	//)
+
 	//fmt.Println(fileName)
 	log.Info("区块文件名：", fileName)
 	_, err := os.Stat(fileName)
 	if os.IsNotExist(err) {
 		log.Info("区块文件不存在")
 		return MinuteDataBlock{}
-	}else {
+	} else {
 		log.Info("文件存在，开始更新")
-		jsonfile,_ := os.Open(fileName)
+		jsonfile, _ := os.Open(fileName)
 		defer jsonfile.Close()
 		//读取文件
 		fileContent, err := ioutil.ReadAll(jsonfile)
@@ -104,7 +122,7 @@ func ReadTxMinFiletoTenmin(time string, ledger string, index string) MinuteDataB
 	}
 }
 
-func Convert(blockInfo BlockHeader, receipt DataReceipt) *DataReceiptBlockInfo{
+func Convert(blockInfo BlockHeader, receipt DataReceipt) *DataReceiptBlockInfo {
 	return &DataReceiptBlockInfo{
 		receipt,
 		blockInfo.BlockHeight,
@@ -115,6 +133,7 @@ func Convert(blockInfo BlockHeader, receipt DataReceipt) *DataReceiptBlockInfo{
 		blockInfo.BlockType,
 	}
 }
+
 //2022-07-12 10:06:00.0450021
 //根据redis存证数据的时间戳返回分钟数
 func GetIndexMinInt(x string) (string, int) {
@@ -130,23 +149,24 @@ func GetIndexMinInt(x string) (string, int) {
 	//timeCorrect:=fmt.Sprintf("%s.%d",timeFormatString,naosecond)
 	return dayTimeArray[0], indexMinInt
 }
+
 //查询redis中的所有Key，根据Key的存储时间和类型到hraft文件中查找到该key，然后修改这个key在zset中的值，添加区块属性
 //每分钟定时查询一次上一分钟范围内的新加元素，如果产生了新元素，则去该分钟对应的文件中查找区块信息并更新。
-func GetValue(ctx context.Context, rdb *redis.Client, timeStamp int64){
+func GetValue(ctx context.Context, rdb *redis.Client, timeStamp int64) {
 	//timestamp := time.Now().Unix()
 	//timestamp := 1657591590
-	left := float64(timeStamp)-100.0
+	left := float64(timeStamp) - 100.0
 	right := float64(timeStamp)
 	n, err := rdb.ZCount(ctx, "ReceiptSet", fmt.Sprint(left), fmt.Sprint(right)).Result()
 	if err != nil {
 		log.Error("zcount查询失败 : ", err)
 	}
 
-	if n > 0{
-		log.Info("当前zSet中被选中数据个数为：",n )
+	if n > 0 {
+		log.Info("当前zSet中被选中数据个数为：", n)
 		res, err := rdb.ZRangeByScore(ctx, "ReceiptSet", &redis.ZRangeBy{
-			Min:    fmt.Sprint(left),
-			Max:    fmt.Sprint(right),
+			Min: fmt.Sprint(left),
+			Max: fmt.Sprint(right),
 		}).Result()
 		if err != nil {
 			log.Error("zrange查询失败 : ", err)
@@ -154,7 +174,7 @@ func GetValue(ctx context.Context, rdb *redis.Client, timeStamp int64){
 		//fmt.Println(res)
 		//val, err := rdb.Get(ctx, keyId).Result()
 		var result []DataReceipt
-		for _,n := range res{
+		for _, n := range res {
 
 			var tmp DataReceipt
 			if err := json.Unmarshal([]byte(n), &tmp); err != nil {
@@ -163,7 +183,7 @@ func GetValue(ctx context.Context, rdb *redis.Client, timeStamp int64){
 			//log.Info("开始更新zSet")
 			result = append(result, tmp)
 		}
-		for _,n := range result{
+		for _, n := range result {
 			//log.Info("开始更新zSet")
 			//fmt.Println(n.ServiceType, " ", n.CreateTimestamp)
 			time1, index := GetIndexMinInt(n.CreateTimestamp)
@@ -173,8 +193,8 @@ func GetValue(ctx context.Context, rdb *redis.Client, timeStamp int64){
 			if blockInfo.Header.KeyId != "" {
 				res1, _ := json.Marshal(n)
 				//fmt.Println(string(res1))
-				score,_ := rdb.ZScore(ctx, "ReceiptSet", string(res1)).Result()
-				if score == 0.0{
+				score, _ := rdb.ZScore(ctx, "ReceiptSet", string(res1)).Result()
+				if score == 0.0 {
 					continue
 				}
 				log.Info("当前更新的值的score：", score)
@@ -191,13 +211,12 @@ func GetValue(ctx context.Context, rdb *redis.Client, timeStamp int64){
 					Score:  score,
 					Member: string(end2),
 				})
-			}else {
+			} else {
 				break
 			}
 		}
-	}else {
-		log.Info("当前zSet中没有新数据" )
+	} else {
+		log.Info("当前zSet中没有新数据")
 	}
 
 }
-

@@ -26,6 +26,14 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		return c.String(http.StatusOK, "Hello, Scope!")
 	})
 	i := 0
+	e.GET("/health", func(c echo.Context) error {
+		fmt.Println("Consul health check!!")
+		return c.JSON(http.StatusOK, NewResult(nil, nil))
+	})
+	//TODO:登录请求,在区块链上查找用户信息  在etcd集群中找
+	e.POST("/login", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Login success!")
+	})
 	e.POST("/storeReceipt", func(c echo.Context) error {
 		//log.Info("接收到存证数据")
 
@@ -39,21 +47,7 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 			log.Error("validate error: ", err)
 			return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
 		}
-		// var naosecond = time.Now().Nanosecond()
-		// stringnase := strconv.Itoa(naosecond)
-		// nasecount := len(stringnase)
-		// naosecond1 := stringnase[nasecount-5 : nasecount-3]
-		// naosecond2 := stringnase[nasecount-3 : nasecount-1]
-		// naosecond3 := stringnase[nasecount-1 : nasecount]
-		// fmt.Println(stringnase)
-		// timeUnix := time.Now().Unix() //时间戳
-		// //该时间传入的整个数组集都统一时间戳
-		// str := time.Unix(timeUnix, 0).Format("2006-01-02 15:04:05")
 
-		// timeCorrect := fmt.Sprintf("%s.%s%s%s", str, naosecond1, naosecond2, naosecond3)
-
-		// receipts.CreateTimestamp = timeCorrect
-		//log.Info(receipts)
 		for _, r := range receipts.Receipts {
 			var receipt DataReceipt
 			var naosecond = time.Now().UnixNano()

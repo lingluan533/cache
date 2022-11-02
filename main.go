@@ -9,16 +9,14 @@ import (
 	"context"
 	"encoding/json"
 	"flag"
-	"os"
-	"fmt"
-	_ "net/http/pprof"
 	"github.com/go-redis/redis/v8"
 	"github.com/hashicorp/consul/api"
 	log "github.com/sirupsen/logrus"
-	"runtime/pprof"
+	_ "net/http/pprof"
+	"os"
+	_ "runtime/pprof"
 	"strconv"
 	"time"
-
 )
 
 // flag 包来处理命令行参数,返回值都是指针类型

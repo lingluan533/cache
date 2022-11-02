@@ -89,7 +89,7 @@ func ReadTxMinFiletoTenmin(time string, ledger string, index string) MinuteDataB
 	//	log.Error("获取当前路径失败 =: ", err)
 	//}
 	var (
-		fileName = "D:\\Go\\src\\hraft1102" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/" + index
+		fileName = "../scope/" + time + "/" + ledger + "/MINUTE" + "/" + index
 	)
 	//var (
 	//	fileName = "E:\\Go\\go\\src\\cache" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/" + index

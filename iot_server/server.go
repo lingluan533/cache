@@ -6,19 +6,20 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
-	"os"
-	"io/ioutil"
-
 
 	"github.com/go-playground/validator/v10"
 	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo/v4"
 	log "github.com/sirupsen/logrus"
 )
+
 var LOC, _ = time.LoadLocation("Asia/Shanghai")
+
 func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Client) *echo.Echo {
 	e := echo.New()
 	e.HTTPErrorHandler = ErrorHandler
@@ -312,19 +313,19 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 			return c.JSON(http.StatusOK, nil)
 		}
 		time, index := backend.GetIndexMinInt(fmt.Sprint(start))
-		log.Info(time,"+",index)
+		log.Info(time, "+", index)
 		//}
 
 		var (
-			fileName = "D:\\Go\\src\\hraft1102" + "/scope/" + time + "/" + ledger + "/MINUTE" + "/"
+			fileName = "../scope/" + time + "/" + ledger + "/MINUTE" + "/"
 		)
 		blockHeader := []backend.BlockHeader{}
-		for i:=0; i<20 && index-i>0 ; i++{
+		for i := 0; i < 20 && index-i > 0; i++ {
 			tmp := ReadTxMinFiletoTenmin(fileName + strconv.Itoa(index-i))
-			if tmp.KeyId == ""{
+			if tmp.KeyId == "" {
 				continue
 			}
-			blockHeader = append(blockHeader,tmp)
+			blockHeader = append(blockHeader, tmp)
 		}
 		//res, _ := json.Marshal(blockHeader)
 
@@ -344,16 +345,16 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 	}
 	return nil
 }
-func ReadTxMinFiletoTenmin(fileName string) backend.BlockHeader{
+func ReadTxMinFiletoTenmin(fileName string) backend.BlockHeader {
 
 	log.Info("区块文件名：", fileName)
 	_, err := os.Stat(fileName)
 	if os.IsNotExist(err) {
 		log.Info("区块文件不存在")
 		return backend.BlockHeader{}
-	}else {
+	} else {
 		log.Info("文件存在，开始查询")
-		jsonfile,_ := os.Open(fileName)
+		jsonfile, _ := os.Open(fileName)
 		defer jsonfile.Close()
 		//读取文件
 		fileContent, err := ioutil.ReadAll(jsonfile)

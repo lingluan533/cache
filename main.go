@@ -12,7 +12,9 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/hashicorp/consul/api"
 	log "github.com/sirupsen/logrus"
+	_ "net/http/pprof"
 	"os"
+	_ "runtime/pprof"
 	"strconv"
 	"time"
 )
@@ -138,6 +140,7 @@ func consumeResult(ctx context.Context, rdb *redis.Client, config *dataStruct.Gl
 				}
 				//				log.Info("Publish Success: ", string(data))
 				//redis set存入值
+				//start := time.Now().UnixNano()
 				statusCmd := rdb.Set(ctx, v.KeyId, string(data), time.Second*time.Duration(config.Cache.CommonConfig.ExpireTime))
 				if statusCmd == nil || statusCmd.Err() != nil {
 					log.Error("Set error: ", statusCmd.Err())
@@ -164,13 +167,13 @@ func consumeResult(ctx context.Context, rdb *redis.Client, config *dataStruct.Gl
 					log.Error("publish error: ", err)
 					return
 				}
-				log.Info("Publish Success: ", string(data))
+				//log.Info("Publish Success: ", string(data))
 				statusCmd := rdb.Set(ctx, v.TransactionId, string(data), time.Second*time.Duration(config.Cache.CommonConfig.ExpireTime))
 				if statusCmd == nil || statusCmd.Err() != nil {
 					log.Error("Set error: ", statusCmd.Err())
 					return
 				}
-				log.Info("Set Success: ", string(data))
+				//log.Info("Set Success: ", string(data))
 				timestamp := time.Now().Unix()
 				rdb.ZAdd(ctx, "TransactionSet", &redis.Z{
 					Score:  float64(timestamp),

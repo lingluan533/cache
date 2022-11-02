@@ -210,7 +210,7 @@ func consulClientRegiste(globalConfig *dataStruct.GlobalConfig) {
 	// 3.注册的服务配置
 	log.Println(config.Name)
 	reg := api.AgentServiceRegistration{
-		ID:                config.ID + config.LocalAddress,
+		ID:                config.ID,
 		Name:              config.Name,
 		Tags:              []string{"consul", "http", "edgenode"},
 		Address:           config.LocalAddress,

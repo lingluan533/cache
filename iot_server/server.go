@@ -317,7 +317,7 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		//}
 
 		var (
-			fileName = "../scope/" + time + "/" + ledger + "/MINUTE" + "/"
+			fileName = "E:\\Go_WorkSpace\\hraft1102\\scope\\" + time + "\\" + ledger + "\\MINUTE" + "\\"
 		)
 		blockHeader := []backend.BlockHeader{}
 		for i := 0; i < 20 && index-i > 0; i++ {

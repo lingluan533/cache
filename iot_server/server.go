@@ -2,10 +2,12 @@ package iot_server
 
 import (
 	"cache/backend"
+	utils "cache/util"
 	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
+	clientv3 "go.etcd.io/etcd/client/v3"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -100,10 +102,12 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 	e.POST("/storeTransaction", func(c echo.Context) error {
 		//log.Info("接收到交易数据")
 		var transactions DataTransactions
+
 		if err := c.Bind(&transactions); err != nil {
 			log.Error("marshal error: ", err)
 			return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
 		}
+		fmt.Println(transactions)
 		if err := c.Validate(&transactions); err != nil {
 			log.Error("validate error: ", err)
 			return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
@@ -206,43 +210,7 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		log.Info("查询交易数据成功")
 		return c.JSON(http.StatusOK, respInfo)
 	})
-	//e.POST("/queryTimeReceipt", func(c echo.Context) error {
-	//	//c是提交的参数，
-	//	// if err := c.Bind(&m); err != nil {
-	//	// 	return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
-	//	// }
-	//	log.Info("按时间戳查询存证数据")
-	//	//var respInfo ReceiptResponseInfo
-	//	//start := c.FormValue("StartTime")
-	//	//end := c.FormValue("EndTime")
-	//	start, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("StartTime"))
-	//	end, _ := time.Parse("2006-01-02 15:04:05", c.FormValue("EndTime"))
-	//	res, err := rdb.ZRangeByScore(ctx, "zSet", &redis.ZRangeBy{
-	//		Min: strconv.FormatInt(start.Unix(), 10),
-	//		Max: strconv.FormatInt(end.Unix(), 10),
-	//	}).Result()
-	//
-	//	if err != nil {
-	//		// respInfo.Success = false
-	//		// respInfo.Err = "GET error"
-	//		log.Error("GET error: ", err)
-	//		return c.JSON(http.StatusOK, res)
-	//	}
-	//	// fmt.Println(res)
-	//	//将查到的多条结果赋值给数据结构
-	//	// if err := json.Unmarshal([]byte(res), &respInfo.DataReceipt); err != nil {
-	//	// 	fmt.Println(string(res))
-	//	// 	respInfo.Success = false
-	//	// 	respInfo.Err = "Unmarshal error"
-	//	// 	log.Error("Unmarshal error: ", err)
-	//	// 	return c.JSON(http.StatusOK, res)
-	//	// }
-	//	// respInfo.Success = true
-	//	// respInfo.Status = true
-	//	//log.Info("zSet Success: ", string(data))
-	//	log.Info("查询存证数据成功: ", res)
-	//	return c.JSON(http.StatusOK, res)
-	//})
+
 	type QueryBlocks struct {
 		StartTime string `json:"StartTime" xml:"StartTime" form:"StartTime" query:"StartTime"`
 		EndTime   string `json:"EndTime" xml:"EndTime" form:"EndTime" query:"EndTime"`
@@ -332,6 +300,66 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		log.Info("查询区块头数据成功: ", blockHeader)
 		return c.JSON(http.StatusOK, blockHeader)
 	})
+
+	//存放用户操作记录到etcd
+	e.POST("/storeOperationRecord", func(c echo.Context) error {
+		var receipts DataReceipts
+		if err := c.Bind(&receipts); err != nil {
+			// {"err": "marshal error", "data": nil}
+			log.Error("marshal error: ", err)
+			return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
+		}
+		if err := c.Validate(&receipts); err != nil {
+			log.Error("validate error: ", err)
+			return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
+		}
+
+		for _, r := range receipts.Receipts {
+			var receipt DataReceipt
+			var naosecond = time.Now().UnixNano()
+			stringnase := strconv.FormatInt(naosecond, 10)
+			nasecount := len(stringnase)
+			naosecond1 := stringnase[nasecount-5 : nasecount-3]
+			naosecond2 := stringnase[nasecount-3 : nasecount-1]
+			naosecond3 := stringnase[nasecount-1 : nasecount]
+			//fmt.Println(stringnase)
+			timeUnix := time.Now().Unix() //时间戳
+			//该时间传入的整个数组集都统一时间戳
+			str := time.Unix(timeUnix, 0).Format("2006-01-02 15:04:05")
+			receipt.Receipt = r
+			timeCorrect := fmt.Sprintf("%s.%s%s%s", str, naosecond1, naosecond2, naosecond3)
+			//fmt.Println(receipt.DataType, backend.DataTypeVideo)
+			if receipt.DataType == backend.DataTypeVideo {
+				timeCorrect = timeCorrect + "1"
+			} else if receipt.DataType == backend.DataTypeUserBehaviour {
+				timeCorrect = timeCorrect + "2"
+			}
+			//fmt.Println(timeCorrect)
+			receipt.CreateTimestamp = timeCorrect
+			receipt.EntityId = receipts.EntityId
+
+			if err := c.Validate(&r); err != nil {
+				log.Error("validate error: ", err)
+				return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
+			}
+			// eetcd客户端
+			client, err := clientv3.New(clientv3.Config{
+				Endpoints:   []string{"127.0.0.1:2379"},
+				DialTimeout: 5 * time.Second,
+			})
+			if err != nil {
+				log.Error("main-main()获取客户端错误", err)
+				return c.JSON(http.StatusInternalServerError, NewResult(err.Error(), nil))
+			}
+			defer client.Close()
+			data, err := json.Marshal(receipt)
+			utils.PutData(client, receipt.EntityId+"_"+receipt.CreateTimestamp, string(data), 4*time.Second)
+			return c.JSON(http.StatusOK, NewResult("Ok", nil))
+
+		}
+		return c.JSON(http.StatusOK, NewResult("Ok", nil))
+	})
+
 	return e
 }
 

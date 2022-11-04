@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"github.com/labstack/gommon/log"
 	"gopkg.in/yaml.v2"
 	"net"
@@ -52,8 +53,9 @@ func Ips() string {
 
 		for _, v := range addresses {
 			ips[byName.Name] = v.String()
-			//fmt.Println(byName.Name, v.String(), v.Network())
+			fmt.Println(byName.Name, v.String(), v.Network())
 			if strings.HasPrefix(v.String(), "192.168.195.") {
+				fmt.Println("检测到ip:", v.String())
 				return strings.TrimSuffix(v.String(), "/24")
 			}
 
@@ -62,6 +64,7 @@ func Ips() string {
 			ips[byName.Name] = v.String()
 			//fmt.Println(byName.Name, v.String(), v.Network())
 			if strings.HasPrefix(v.String(), "192.168.216.") {
+				fmt.Println("检测到ip:", v.String())
 				return strings.TrimSuffix(v.String(), "/24")
 			}
 		}

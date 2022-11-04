@@ -156,3 +156,9 @@ type ConsulConfig struct {
 	HealthTimeout    string `yaml:"HealthTimeout"`
 	HealthInterval   string `yaml:"HealthInterval"`
 }
+
+type OnlineConsulServer struct {
+	ID            string `yaml:"ID"`
+	ServerAddress string `yaml:"ServerAddress"`
+	ServicePort   int    `yaml:"ServicePort"`
+}

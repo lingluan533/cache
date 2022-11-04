@@ -62,6 +62,7 @@ func main() {
 	go consumeResult(ctx, redisClient, &config, results)
 
 	ticker := time.NewTicker(time.Second * 10)
+
 	go func() {
 		n, err := redisClient.Exists(ctx, "ReceiptSet").Result()
 		if err != nil {

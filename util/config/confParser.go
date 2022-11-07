@@ -1,18 +1,26 @@
 package config
 
 import (
+	"context"
 	"fmt"
 	"github.com/labstack/gommon/log"
+	clientv3 "go.etcd.io/etcd/client/v3"
 	"gopkg.in/yaml.v2"
 	"net"
 	"strconv"
 	"strings"
+	"time"
 
 	//yaml 包使 Go 程序能够轻松地对 YAML 值进行编码和解码。
 	"cache/backend"
 	"cache/dataStruct"
 	"io/ioutil"
 )
+
+var EtcdClient *clientv3.Client
+var GlobalConfig dataStruct.GlobalConfig
+var DialTimeout time.Duration
+var RequestTimeout time.Duration
 
 func Initialize() dataStruct.GlobalConfig {
 	data, err := ioutil.ReadFile("./config.yaml")
@@ -37,6 +45,12 @@ func Initialize() dataStruct.GlobalConfig {
 	config.Consul.LocalAddress = ip
 	config.Consul.HealthTCP = ip + ":" + strconv.Itoa(config.Consul.LocalServicePort)
 	config.Consul.ID = config.Consul.Name + "_" + ip
+	GlobalConfig = config
+	//yaml文件中配置了10秒
+	DialTimeout = time.Duration(GlobalConfig.Consensus.CommonConfig.Timeout) * time.Second
+	//这里设置了RequestTimeout的值，后面很多地方都用到了这个值
+	RequestTimeout = time.Duration(GlobalConfig.Consensus.CommonConfig.Timeout) * time.Second
+
 	return config
 }
 
@@ -70,5 +84,24 @@ func Ips() string {
 		}
 	}
 	return "127.0.0.1"
+
+}
+
+func GetETCDClient() {
+	// 连接ETCD
+	// etcd客户端
+	var err error
+	EtcdClient, err = clientv3.New(clientv3.Config{
+		Endpoints:   []string{"127.0.0.1:2379"},
+		DialTimeout: 5 * time.Second,
+	})
+	if err != nil {
+		log.Error("etcd获取客户端错误", err)
+		//return c.JSON(http.StatusInternalServerError, NewResult(err.Error(), nil))
+	} else {
+		status, _ := EtcdClient.Status(context.TODO(), "127.0.0.1:2379")
+		log.Infof("etcd获取客户端成功：", EtcdClient)
+		log.Infof("etcd客户端状态：", status)
+	}
 
 }

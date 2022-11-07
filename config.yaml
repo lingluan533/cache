@@ -169,5 +169,7 @@ ConsulConfig:
   HealthTimeout: "2s"
   HealthInterval: "6s"
 
-
+#ETCD key前缀
+EtcdKeyPrefix:
+  user_operation: "USEROPERATION"
 

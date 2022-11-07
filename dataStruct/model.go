@@ -1,17 +1,20 @@
 package dataStruct
 
 type GlobalConfig struct {
-	ChainName string          `yaml:"chain_name"`
-	Version   string          `yaml:"version"`
-	Client    ClientConfig    `yaml:"client"`
-	Common    CommonConfig    `yaml:"common"`
-	Cache     CacheConfig     `yaml:"cache"`
-	Consensus ConsensusConfig `yaml:"consensus"`
-	Block     BlockConfig     `yaml:"block"`
-	P2p       P2pConfig       `yaml:"p2p"`
-	Consul    ConsulConfig    `yaml:"ConsulConfig"`
+	ChainName        string           `yaml:"chain_name"`
+	Version          string           `yaml:"version"`
+	Client           ClientConfig     `yaml:"client"`
+	Common           CommonConfig     `yaml:"common"`
+	Cache            CacheConfig      `yaml:"cache"`
+	Consensus        ConsensusConfig  `yaml:"consensus"`
+	Block            BlockConfig      `yaml:"block"`
+	P2p              P2pConfig        `yaml:"p2p"`
+	Consul           ConsulConfig     `yaml:"ConsulConfig"`
+	EtcdPrefixConfig EtcdPrefixConfig `yaml:"EtcdKeyPrefix"`
 }
-
+type EtcdPrefixConfig struct {
+	UserOperation string `yaml:"user_operation"`
+}
 type ClientConfig struct {
 	Organization string       `yaml:"organization"`
 	CryptoConfig CryptoConfig `yaml:"crypto_config"`

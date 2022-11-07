@@ -3,20 +3,21 @@ package iot_server
 import (
 	"cache/backend"
 	utils "cache/util"
+	"cache/util/config"
 	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
-	clientv3 "go.etcd.io/etcd/client/v3"
+	"github.com/go-playground/validator/v10"
+	"github.com/go-redis/redis/v8"
+	"github.com/labstack/echo/v4"
+	//clientv3 "go.etcd.io/etcd/client/v3"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"strconv"
 	"time"
 
-	"github.com/go-playground/validator/v10"
-	"github.com/go-redis/redis/v8"
-	"github.com/labstack/echo/v4"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -287,7 +288,7 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		var (
 			fileName = "E:\\Go_WorkSpace\\hraft1102\\scope\\" + time + "\\" + ledger + "\\MINUTE" + "\\"
 		)
-		blockHeader := []backend.BlockHeader{}
+		var blockHeader []backend.BlockHeader
 		for i := 0; i < 20 && index-i > 0; i++ {
 			tmp := ReadTxMinFiletoTenmin(fileName + strconv.Itoa(index-i))
 			if tmp.KeyId == "" {
@@ -304,6 +305,7 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 	//存放用户操作记录到etcd
 	e.POST("/storeOperationRecord", func(c echo.Context) error {
 		var receipts DataReceipts
+		//fmt.Println("storeOperationRecord")
 		if err := c.Bind(&receipts); err != nil {
 			// {"err": "marshal error", "data": nil}
 			log.Error("marshal error: ", err)
@@ -342,22 +344,34 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 				log.Error("validate error: ", err)
 				return c.JSON(http.StatusOK, NewResult(err.Error(), nil))
 			}
-			// eetcd客户端
-			client, err := clientv3.New(clientv3.Config{
-				Endpoints:   []string{"127.0.0.1:2379"},
-				DialTimeout: 5 * time.Second,
-			})
-			if err != nil {
-				log.Error("main-main()获取客户端错误", err)
-				return c.JSON(http.StatusInternalServerError, NewResult(err.Error(), nil))
-			}
-			defer client.Close()
-			data, err := json.Marshal(receipt)
-			utils.PutData(client, receipt.EntityId+"_"+receipt.CreateTimestamp, string(data), 4*time.Second)
+			data, _ := json.Marshal(receipts)
+			//EntityId 结构是：UserOperation + "_" + userName + "_" + filePath
+			utils.PutData(config.EtcdClient, receipt.EntityId+":"+receipt.CreateTimestamp, string(data), 4*time.Second)
+			log.Printf("storeOperationRecord 成功：key=%s", receipt.EntityId+":"+receipt.CreateTimestamp)
 			return c.JSON(http.StatusOK, NewResult("Ok", nil))
 
 		}
 		return c.JSON(http.StatusOK, NewResult("Ok", nil))
+	})
+	//根据用户名查询用户操作记录
+	e.POST("/queryOperationRecordsByUserName", func(c echo.Context) error {
+		userName := c.FormValue("user")
+		fmt.Printf("queryOperationRecordsByUserName user=%s\n", userName)
+		fmt.Printf("prefix=%s\n", config.GlobalConfig.EtcdPrefixConfig.UserOperation+":"+userName)
+		resp := utils.GetDataPrefix(config.EtcdClient, config.GlobalConfig.EtcdPrefixConfig.UserOperation+":"+userName, config.RequestTimeout)
+		var res []DataReceipts
+		fmt.Println(resp.Kvs)
+		for _, ev := range resp.Kvs {
+			fmt.Printf("%s : %s\n", ev.Key, ev.Value)
+			var data DataReceipts
+			err := json.Unmarshal(ev.Value, &data)
+			res = append(res, data)
+			if err != nil {
+				log.Errorf("queryOperationRecordsByUserName Unmarshal err :%v", err)
+			}
+		}
+		fmt.Println(res)
+		return c.JSON(http.StatusOK, res)
 	})
 
 	return e

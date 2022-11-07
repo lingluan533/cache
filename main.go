@@ -29,7 +29,10 @@ func main() {
 	flag.Parse() //解析flag，把用户传递的命令行参数解析为对应变量的值
 	logger.Init()
 	ctx := context.Background()
+	//初始化etcd客户端
+	config.GetETCDClient()
 	config := config.Initialize()
+
 	log.Println("配置文件加载完成")
 	log.Println(config)
 	//读取config.yaml中的内容
@@ -218,12 +221,10 @@ func consulClientRegiste(globalConfig *dataStruct.GlobalConfig) {
 		Port:              config.LocalServicePort,
 		EnableTagOverride: true,
 		Check: &api.AgentServiceCheck{
-			CheckID: config.HealthCheckID + config.LocalAddress,
-			TCP:     config.HealthTCP,
-			//HTTP:                           "http://" + config.LocalAddress + ":" + strconv.Itoa(config.LocalServicePort) + "/health",
-			Timeout:                        config.HealthTimeout,
-			Interval:                       config.HealthInterval,
-			DeregisterCriticalServiceAfter: "40s",
+			CheckID:  config.HealthCheckID + config.LocalAddress,
+			TCP:      config.HealthTCP,
+			Timeout:  config.HealthTimeout,
+			Interval: config.HealthInterval,
 		},
 	}
 	log.Println(reg)

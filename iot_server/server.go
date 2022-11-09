@@ -2,6 +2,7 @@ package iot_server
 
 import (
 	"cache/backend"
+	"cache/system_info"
 	utils "cache/util"
 	"cache/util/config"
 	"context"
@@ -372,6 +373,11 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		}
 		fmt.Println(res)
 		return c.JSON(http.StatusOK, res)
+	})
+	//根据用户名查询用户操作记录
+	e.GET("/querySystemInfo", func(c echo.Context) error {
+		sysInfo := system_info.GetSysInfo()
+		return c.JSON(http.StatusOK, sysInfo)
 	})
 
 	return e

@@ -62,9 +62,7 @@ func Ips() string {
 
 	for _, i := range interfaces {
 		byName, _ := net.InterfaceByName(i.Name)
-
 		addresses, _ := byName.Addrs()
-
 		for _, v := range addresses {
 			ips[byName.Name] = v.String()
 			fmt.Println(byName.Name, v.String(), v.Network())
@@ -72,7 +70,6 @@ func Ips() string {
 				fmt.Println("检测到ip:", v.String())
 				return strings.TrimSuffix(v.String(), "/24")
 			}
-
 		}
 		for _, v := range addresses {
 			ips[byName.Name] = v.String()
@@ -91,6 +88,7 @@ func GetETCDClient() {
 	// 连接ETCD
 	// etcd客户端
 	var err error
+	log.Printf("ETCD客户端连接中....")
 	EtcdClient, err = clientv3.New(clientv3.Config{
 		Endpoints:   []string{"127.0.0.1:2379"},
 		DialTimeout: 5 * time.Second,
@@ -103,5 +101,6 @@ func GetETCDClient() {
 		log.Infof("etcd获取客户端成功：", EtcdClient)
 		log.Infof("etcd客户端状态：", status)
 	}
+	log.Printf("ETCD客户端连接成功....")
 
 }

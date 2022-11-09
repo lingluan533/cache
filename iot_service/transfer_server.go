@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"cache/consul_service"
 	"cache/iot_server"
 	"encoding/json"
 	"fmt"
@@ -10,7 +9,6 @@ import (
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"strconv"
-	"time"
 )
 
 //在线服务列表
@@ -18,14 +16,14 @@ var OnlineServers []*consulapi.ServiceEntry
 
 func main() {
 	//定时更新在线服务列表
-	ticker1 := time.NewTicker(time.Second * 5)
-	go func() {
-		for {
-			<-ticker1.C
-			OnlineServers = consul_service.QueryOnlineEdgeNodes()
-			ticker1.Reset(time.Minute * 1)
-		}
-	}()
+	//ticker1 := time.NewTicker(time.Second * 5)
+	//go func() {
+	//	for {
+	//		<-ticker1.C
+	//		OnlineServers = consul_service.QueryOnlineEdgeNodes()
+	//		ticker1.Reset(time.Minute * 1)
+	//	}
+	//}()
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, iot_server.NewResult("hello, transfer server!"))

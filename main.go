@@ -9,6 +9,7 @@ import (
 	"context"
 	"encoding/json"
 	"flag"
+	"fmt"
 	"github.com/go-redis/redis/v8"
 	"github.com/hashicorp/consul/api"
 	log "github.com/sirupsen/logrus"
@@ -26,6 +27,7 @@ var status = flag.Bool("status", false, "状态监测参数")
 //var systemStatus backend.SystemStatus
 
 func main() {
+	fmt.Println("系统启动")
 	flag.Parse() //解析flag，把用户传递的命令行参数解析为对应变量的值
 	logger.Init()
 	ctx := context.Background()

@@ -215,12 +215,13 @@ func consulClientRegiste(globalConfig *dataStruct.GlobalConfig) {
 	consulClient, _ := api.NewClient(consulConfig)
 	// 3.注册的服务配置
 	log.Println(config.Name)
+	localServicePort, _ := strconv.ParseInt(config.LocalServicePort, 10, 64)
 	reg := api.AgentServiceRegistration{
 		ID:                config.ID,
 		Name:              config.Name,
 		Tags:              []string{"consul", "http", "edgenode"},
 		Address:           config.LocalAddress,
-		Port:              config.LocalServicePort,
+		Port:              int(localServicePort),
 		EnableTagOverride: true,
 		Check: &api.AgentServiceCheck{
 			CheckID:  config.HealthCheckID + config.LocalAddress,
@@ -230,7 +231,7 @@ func consulClientRegiste(globalConfig *dataStruct.GlobalConfig) {
 		},
 	}
 	log.Println(reg)
-	log.Println("http://" + config.LocalAddress + ":" + strconv.Itoa(config.LocalServicePort) + "/health")
+	log.Println("http://" + config.LocalAddress + ":" + config.LocalServicePort + "/health")
 	// 4. 注册 grpc 服务到 consul 上
 	err := consulClient.Agent().ServiceRegister(&reg)
 	if err != nil {

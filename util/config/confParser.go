@@ -7,7 +7,6 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"gopkg.in/yaml.v2"
 	"net"
-	"strconv"
 	"strings"
 	"time"
 
@@ -35,7 +34,7 @@ func Initialize() dataStruct.GlobalConfig {
 		log.Error("配置文件加载错误: ", err)
 		log.Fatal(err)
 	}
-	//???
+
 	backend.LedgerMap[backend.DataTypeNodeCredibility] = "node_credible"
 	backend.LedgerMap[backend.DataTypeVideo] = "video"
 	backend.LedgerMap[backend.DataTypeSensor] = "sensor"
@@ -43,14 +42,14 @@ func Initialize() dataStruct.GlobalConfig {
 	backend.LedgerMap[backend.DataTypeAccessLog] = "service_access"
 	ip := Ips()
 	config.Consul.LocalAddress = ip
-	config.Consul.HealthTCP = ip + ":" + strconv.Itoa(config.Consul.LocalServicePort)
+	config.Consul.HealthTCP = ip + ":" + config.Consul.LocalServicePort
 	config.Consul.ID = config.Consul.Name + "_" + ip
 	GlobalConfig = config
 	//yaml文件中配置了10秒
 	DialTimeout = time.Duration(GlobalConfig.Consensus.CommonConfig.Timeout) * time.Second
 	//这里设置了RequestTimeout的值，后面很多地方都用到了这个值
 	RequestTimeout = time.Duration(GlobalConfig.Consensus.CommonConfig.Timeout) * time.Second
-
+	fmt.Println(config)
 	return config
 }
 
@@ -67,14 +66,6 @@ func Ips() string {
 			ips[byName.Name] = v.String()
 			fmt.Println(byName.Name, v.String(), v.Network())
 			if strings.HasPrefix(v.String(), "192.168.195.") {
-				fmt.Println("检测到ip:", v.String())
-				return strings.TrimSuffix(v.String(), "/24")
-			}
-		}
-		for _, v := range addresses {
-			ips[byName.Name] = v.String()
-			//fmt.Println(byName.Name, v.String(), v.Network())
-			if strings.HasPrefix(v.String(), "192.168.216.") {
 				fmt.Println("检测到ip:", v.String())
 				return strings.TrimSuffix(v.String(), "/24")
 			}

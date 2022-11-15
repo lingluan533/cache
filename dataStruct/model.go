@@ -153,7 +153,7 @@ type ConsulConfig struct {
 	ID               string `yaml:"ID"`
 	Name             string `yaml:"Name"`
 	LocalAddress     string `yaml:"LocalAddress"`
-	LocalServicePort int    `yaml:"LocalServicePort"`
+	LocalServicePort string `yaml:"LocalServicePort"`
 	HealthCheckID    string `yaml:"HealthCheckID"`
 	HealthTCP        string `yaml:"HealthTCP"`
 	HealthTimeout    string `yaml:"HealthTimeout"`

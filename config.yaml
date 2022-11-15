@@ -163,7 +163,7 @@ ConsulConfig:
   ID: "EdgeNode001"
   Name: "EdgeNode"
   LocalAddress: "192.168.195.164"
-  LocalServicePort: 9000
+  LocalServicePort: "9000"
   HealthCheckID: "consul grpc test"
   HealthTCP: "192.168.195.164:9000"
   HealthTimeout: "2s"

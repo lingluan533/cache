@@ -42,7 +42,7 @@ common:
 cache:
   common_config:
     db: 0
-    password: "JAYlingluan/0118"
+    password:
     #按时间推送的时间间隔
     sync_interval: 20
     sync_size_limit: 1
@@ -52,7 +52,7 @@ cache:
     response: 30
   redis_group:
     redis1:
-      host: 101.43.138.160
+      host: 127.0.0.1
       port: 6379
       webservice:
         url: ":9000"

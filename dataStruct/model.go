@@ -13,7 +13,8 @@ type GlobalConfig struct {
 	EtcdPrefixConfig EtcdPrefixConfig `yaml:"EtcdKeyPrefix"`
 }
 type EtcdPrefixConfig struct {
-	UserOperation string `yaml:"user_operation"`
+	UserOperationPrefix string `yaml:"user_operation"`
+	UserInfoPrefix      string `yaml:"user_info"`
 }
 type ClientConfig struct {
 	Organization string       `yaml:"organization"`
@@ -164,4 +165,12 @@ type OnlineConsulServer struct {
 	ID            string `yaml:"ID"`
 	ServerAddress string `yaml:"ServerAddress"`
 	ServicePort   int    `yaml:"ServicePort"`
+}
+
+// 用户信息
+type UserInfo struct {
+	UserName string `json:"UserName"`
+	Password string `json:"Password"`
+	Phone    string `json:"Phone"`
+	Email    string `json:"Email"`
 }

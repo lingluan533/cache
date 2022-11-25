@@ -147,7 +147,7 @@ block:
   # 区块文件配置项
   block_file_config:
     # 文件的存放根目录地址
-    root_path:  "./blockfile/"
+    root_path: "E:\\Go_WorkSpace\\hraft1102\\scope\\"
 
 p2p:
   local:
@@ -172,4 +172,5 @@ ConsulConfig:
 #ETCD key前缀
 EtcdKeyPrefix:
   user_operation: "USEROPERATION"
+  user_info: "USERINFO"
 

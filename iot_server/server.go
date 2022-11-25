@@ -2,9 +2,11 @@ package iot_server
 
 import (
 	"cache/backend"
+	"cache/config"
+	"cache/dataStruct"
 	"cache/system_info"
 	utils "cache/util"
-	"cache/util/config"
+
 	"context"
 	"encoding/json"
 	"errors"
@@ -40,7 +42,44 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 	})
 	//TODO:登录请求,在区块链上查找用户信息  在etcd集群中找
 	e.POST("/login", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Login success!")
+		UserName := c.FormValue("UserName")
+		Password := c.FormValue("Password")
+		resp := utils.GetData(config.EtcdClient, config.GlobalConfig.EtcdPrefixConfig.UserInfoPrefix+":"+UserName, config.RequestTimeout)
+		var userInfo dataStruct.UserInfo
+		if len(resp.Kvs) > 0 {
+			err := json.Unmarshal(resp.Kvs[0].Value, &userInfo)
+			if err != nil {
+				return c.JSON(http.StatusOK, NewResult(config.ServerInternalError, "Unmarshal error"))
+			}
+			if userInfo.Password == Password {
+				return c.JSON(http.StatusOK, NewResult(config.UserRegisterSuccess, "Login success!"))
+			}
+		}
+		return c.JSON(http.StatusOK, NewResult("500", "No user"))
+	})
+	e.POST("/register", func(c echo.Context) error {
+		//UserName := c.FormValue("UserName")
+		//Password := c.FormValue("Password")
+		//Phone := c.FormValue("Phone")
+		//Email := c.FormValue("Email")
+		var userInfo dataStruct.UserInfo
+
+		c.Bind(&userInfo)
+
+		// 1. 判断是否重复注册
+		resp := utils.GetData(config.EtcdClient, config.GlobalConfig.EtcdPrefixConfig.UserInfoPrefix+":"+userInfo.UserName, config.RequestTimeout)
+		if len(resp.Kvs) > 0 {
+			return c.JSON(http.StatusOK, NewResult(config.UserRepeatRegister, "Repeat Register"))
+		}
+		userInfoByte, err := json.Marshal(&userInfo)
+		if err != nil {
+			fmt.Println("register Marshal error!")
+			return c.JSON(http.StatusOK, NewResult(config.ServerInternalError, "Register error"))
+		}
+
+		utils.PutData(config.EtcdClient, config.GlobalConfig.EtcdPrefixConfig.UserInfoPrefix+":"+userInfo.UserName, string(userInfoByte), 4*time.Second)
+		log.Printf("register 成功：key=%s", config.GlobalConfig.EtcdPrefixConfig.UserInfoPrefix+":"+userInfo.UserName)
+		return c.JSON(http.StatusOK, NewResult(config.UserRegisterSuccess, nil))
 	})
 	e.POST("/storeReceipt", func(c echo.Context) error {
 		//log.Info("接收到存证数据")
@@ -238,8 +277,6 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		}).Result()
 		fmt.Println(res)
 		if err != nil {
-			// respInfo.Success = false
-			// respInfo.Err = "GET error"
 			log.Error("GET error: ", err)
 			return c.JSON(http.StatusOK, res)
 		}
@@ -287,7 +324,7 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		//}
 
 		var (
-			fileName = "E:\\Go_WorkSpace\\hraft1102\\scope\\" + time + "\\" + ledger + "\\MINUTE" + "\\"
+			fileName = config.GlobalConfig.Block.BlockFileConfig.RootPath + time + "\\" + ledger + "\\MINUTE" + "\\"
 		)
 		var blockHeader []backend.BlockHeader
 		for i := 0; i < 20 && index-i > 0; i++ {
@@ -358,8 +395,8 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 	e.POST("/queryOperationRecordsByUserName", func(c echo.Context) error {
 		userName := c.FormValue("user")
 		fmt.Printf("queryOperationRecordsByUserName user=%s\n", userName)
-		fmt.Printf("prefix=%s\n", config.GlobalConfig.EtcdPrefixConfig.UserOperation+":"+userName)
-		resp := utils.GetDataPrefix(config.EtcdClient, config.GlobalConfig.EtcdPrefixConfig.UserOperation+":"+userName, config.RequestTimeout)
+		fmt.Printf("prefix=%s\n", config.GlobalConfig.EtcdPrefixConfig.UserOperationPrefix+":"+userName)
+		resp := utils.GetDataPrefix(config.EtcdClient, config.GlobalConfig.EtcdPrefixConfig.UserOperationPrefix+":"+userName, config.RequestTimeout)
 		var res []DataReceipts
 		fmt.Println(resp.Kvs)
 		for _, ev := range resp.Kvs {
@@ -374,10 +411,21 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 		fmt.Println(res)
 		return c.JSON(http.StatusOK, res)
 	})
-	//根据用户名查询用户操作记录
+	// 查询系统运行信息
 	e.GET("/querySystemInfo", func(c echo.Context) error {
 		sysInfo := system_info.GetSysInfo()
 		return c.JSON(http.StatusOK, sysInfo)
+	})
+
+	/*系统控制类
+	1. 探测  sayHello
+	2. 重启  restart
+	*/
+	e.GET("/sayHello", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, "")
+	})
+	e.GET("/restart", func(c echo.Context) error {
+		return c.JSON(http.StatusOK, "")
 	})
 
 	return e

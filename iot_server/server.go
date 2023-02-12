@@ -52,20 +52,15 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 				return c.JSON(http.StatusOK, NewResult(config.ServerInternalError, "Unmarshal error"))
 			}
 			if userInfo.Password == Password {
-				return c.JSON(http.StatusOK, NewResult(config.UserRegisterSuccess, "Login success!"))
+				return c.JSON(http.StatusOK, NewResult(config.UserLoginSuccess, "Login success!"))
 			}
 		}
 		return c.JSON(http.StatusOK, NewResult("500", "No user"))
 	})
 	e.POST("/register", func(c echo.Context) error {
-		//UserName := c.FormValue("UserName")
-		//Password := c.FormValue("Password")
-		//Phone := c.FormValue("Phone")
-		//Email := c.FormValue("Email")
 		var userInfo dataStruct.UserInfo
-
 		c.Bind(&userInfo)
-
+		fmt.Println(userInfo.UserName + ":" + userInfo.Password)
 		// 1. 判断是否重复注册
 		resp := utils.GetData(config.EtcdClient, config.GlobalConfig.EtcdPrefixConfig.UserInfoPrefix+":"+userInfo.UserName, config.RequestTimeout)
 		if len(resp.Kvs) > 0 {

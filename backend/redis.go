@@ -186,7 +186,7 @@ func initDataTypeSubscribe(ctx context.Context, client *subscribeClient) error {
 				return err //再穿一个给主函数，让主函数return
 			case x := <-ch3:
 				//if x > client.config.Cache.CommonConfig.SyncSizeLimit {
-				if x >= 20 {
+				if x >= 7 {
 					// 发送
 
 					log.Info("消息总长度 ", client.currentSize)
@@ -220,7 +220,7 @@ func initDataTypeSubscribe(ctx context.Context, client *subscribeClient) error {
 		client.currentSize += len(msg.Payload)
 		client.currentNum++
 		//ch3 <- client.currentSize
-		if client.currentNum == 20 {
+		if client.currentNum == 7 {
 			client.wg.Add(1)
 		}
 

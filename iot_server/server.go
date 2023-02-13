@@ -6,6 +6,7 @@ import (
 	"cache/dataStruct"
 	"cache/system_info"
 	utils "cache/util"
+	"sort"
 
 	"context"
 	"encoding/json"
@@ -404,6 +405,9 @@ func NewIOTServer(ctx context.Context, results chan interface{}, rdb *redis.Clie
 			}
 		}
 		fmt.Println(res)
+		sort.Slice(res, func(i, j int) bool {
+			return res[i].CreateTimestamp > res[j].CreateTimestamp
+		})
 		return c.JSON(http.StatusOK, res)
 	})
 	// 查询系统运行信息
